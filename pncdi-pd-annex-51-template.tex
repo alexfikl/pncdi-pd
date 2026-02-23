@@ -1,0 +1,118 @@
+\documentclass[12pt]{scrartcl}
+
+% {{{ packages
+
+\usepackage{iftex}
+\usepackage{xparse}
+\usepackage{geometry}
+\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
+\usepackage[table]{xcolor}
+
+% better environments
+\usepackage[shortlabels]{enumitem}
+
+% better typography
+\usepackage{microtype}
+
+\ifpdftex
+    \usepackage[T1]{fontenc}
+    \usepackage{mathptmx}
+\else
+    \usepackage{fontspec}
+    \IfFontExistsTF{Times New Roman}{
+        \setmainfont[Ligatures=Rare]{Times New Roman}}{
+        \IfFontExistsTF{Nimbus Roman}{
+            \setmainfont{Nimbus Roman}
+        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
+\fi
+
+% force serif fonts
+\addtokomafont{disposition}{\rmfamily}
+
+% }}}
+
+% {{{ formatting
+
+\pagenumbering{gobble}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    citecolor=black,
+    linkcolor=black
+}
+
+\KOMAoptions{
+    paper=A4,
+    parskip=half,
+    footnotes=multiple,
+}
+
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\setlength{\parindent}{0pt}
+
+\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
+
+\NewDocumentCommand \placeholder { o m } {
+    \underline{\IfNoValueTF{#1}{#2}{\makebox[#1em][l]{#2}}}
+}
+
+% }}}
+
+\begin{document}
+
+\textbf{Anexa 5.1 -- Declarație privind încadrarea în definiția organizației de cercetare}
+
+\bigskip
+
+\begin{center}
+\textbf{Declarație privind încadrarea în definiția organizației de cercetare}
+\end{center}
+
+Subsemnatul \placeholder[10]{} \textit{(numele şi prenumele reprezentantului legal al
+organizației de cercetare)}, în calitate de \placeholder[5]{} \textit{(funcția reprezentantului
+legal)} al \placeholder[10]{} \textit{(denumirea completă a organizaţiei de cercetare)},
+declar pe proprie răspundere că sunt îndeplinite următoarele condiții privind încadrarea
+în definiția organizației de cercetare:
+\begin{itemize}[leftmargin=*]
+\item
+Este o entitate\footnotemark[1], indiferent de statutul său juridic (organizație de drept public sau
+privat sau de modalitatea de finanțare, al cărei obiectiv principal este de a efectua în
+mod independent cercetare fundamentală, cercetare industrială sau dezvoltare experimentală,
+sau de a disemina la scară largă rezultatele unor astfel de activități, prin predare,
+publicare, sau transfer de cunoștințe.
+
+\footnotetext[1]{Universități sau institute de cercetare, agenții de transfer de tehnologie,
+intermediari pentru inovare, entități de colaborare fizice sau virtuale orientate spre
+cercetare, inclusiv nucleele de cercetare constituite în cadrul unor spitale sau muzee, care
+îndeplinesc criteriile cuprinse în definiția organizației de cercetare
+}
+
+\item
+În cazul în care entitatea desfășoară și activități economice, finanțarea, costurile și
+veniturile activităților economice respective trebuie să fie contabilizate separat.
+
+\item
+Întreprinderile care pot exercita o influență decisivă asupra unei astfel de entități,
+de exemplu, în calitate de acționari sau asociați, nu pot beneficia de acces preferențial
+la rezultatele generate de aceasta.
+\end{itemize}
+
+\bigskip
+
+\textbf{Declaraţie pe proprie răspundere, sub sancţiunile aplicate faptei de fals în acte publice.}
+
+{
+\noindent \begin{tabular}{@{}p{0.45\textwidth}p{0.55\textwidth}@{}}
+Data: & \textbf{\rodate} \\[1em]
+Reprezentant legal & Funcția: \textbf{Funcția} \\[0.3em]
+& Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
+& Semnătura \\[2em]
+Director proiect & Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
+& Semnătura
+\end{tabular}
+}
+
+\end{document}
+
+% kate: default-dictionary ro_RO;

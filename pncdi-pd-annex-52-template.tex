@@ -1,0 +1,118 @@
+\documentclass[12pt]{scrartcl}
+
+% {{{ packages
+
+\usepackage{iftex}
+\usepackage{xparse}
+\usepackage{geometry}
+\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
+\usepackage[table]{xcolor}
+
+% better environments
+\usepackage[shortlabels]{enumitem}
+
+% better typography
+\usepackage{microtype}
+
+\ifpdftex
+    \usepackage[T1]{fontenc}
+    \usepackage{mathptmx}
+\else
+    \usepackage{fontspec}
+    \IfFontExistsTF{Times New Roman}{
+        \setmainfont[Ligatures=Rare]{Times New Roman}}{
+        \IfFontExistsTF{Nimbus Roman}{
+            \setmainfont{Nimbus Roman}
+        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
+\fi
+
+% force serif fonts
+\addtokomafont{disposition}{\rmfamily}
+
+% }}}
+
+% {{{ formatting
+
+\pagenumbering{gobble}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    citecolor=black,
+    linkcolor=black
+}
+
+\KOMAoptions{
+    paper=A4,
+    parskip=half,
+    footnotes=multiple,
+}
+
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\setlength{\parindent}{0pt}
+
+\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
+
+\NewDocumentCommand \placeholder { o m } {
+    \underline{\IfNoValueTF{#1}{#2}{\makebox[#1em][l]{#2}}}
+}
+
+% }}}
+
+\begin{document}
+
+\textbf{Anexa 5.2 -- Declarație privind eligibilitatea organizației de cercetare}
+
+\bigskip
+
+\begin{center}
+\textbf{Declarație privind eligibilitatea organizației de cercetare}
+\end{center}
+
+Declarăm pe proprie răspundere că \placeholder[10]{} \textit{(denumirea completă a
+organizației de cercetare)}:
+\begin{itemize}[leftmargin=*]
+\item
+Nu este declarată conform legii, în stare de incapacitate de plată;
+
+\item
+Și-a îndeplinit obligațiile de plată a impozitelor, taxelor și contribuțiilor de asigurări
+sociale către bugetele componente ale bugetului general consolidat (buget de stat, bugete
+speciale, bugete locale), în conformitate cu prevederile legale în vigoare;
+
+\item
+Nu are plățile/conturile blocate conform unei hotărâri judecătorești;
+
+\item
+Reprezentantul legal nu a fost condamnat în ultimii 3 ani, prin hotărâre definitivă a
+unei instanțe judecătorești, pentru o faptă care a adus atingere eticii profesionale sau
+pentru comiterea unei greșeli în materie profesională.
+\end{itemize}
+
+De asemenea, unitatea nu se face vinovată de:
+\begin{itemize}[leftmargin=*]
+\item
+Declarații inexacte, cu privire la informațiile solicitate de Autoritatea Contractantă,
+în vederea selectării contractorilor;
+
+\item
+Încălcarea în mod grav a prevederilor unui alt contract de finanțare încheiat anterior
+cu o Autoritate Contractantă
+\end{itemize}
+
+\bigskip
+
+\textbf{Declaraţie pe proprie răspundere, sub sancţiunile aplicate faptei de fals în acte publice.}
+
+{
+\noindent \begin{tabular}{@{}p{0.45\textwidth}p{0.55\textwidth}@{}}
+Data: & \textbf{\rodate} \\[1em]
+Reprezentant legal & Funcția: \textbf{Funcția} \\[0.3em]
+& Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
+& Semnătura
+\end{tabular}
+}
+
+\end{document}
+
+% kate: default-dictionary ro_RO;
