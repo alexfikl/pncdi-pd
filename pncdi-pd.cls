@@ -105,6 +105,7 @@
 % <<< required formatting
 
 \singlespacing
+\setstretch{1.15}
 
 \ifpdftex
     \usepackage[T1]{fontenc}
