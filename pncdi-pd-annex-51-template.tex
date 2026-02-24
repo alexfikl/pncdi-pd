@@ -1,68 +1,6 @@
-\documentclass[12pt]{scrartcl}
+\documentclass[draftproposal,form,masculine]{pncdi-pd}
 
-% {{{ packages
-
-\usepackage{iftex}
-\usepackage{xparse}
-
-% language
-\usepackage[romanian]{babel}
-\selectlanguage{romanian}
-
-% formatting
-\usepackage{geometry}
-\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
-\usepackage[table]{xcolor}
-
-% better environments
-\usepackage{csquotes}
-\usepackage[shortlabels]{enumitem}
-\usepackage{microtype}
-
-\ifpdftex
-    \usepackage[T1]{fontenc}
-    \usepackage{mathptmx}
-\else
-    \usepackage{fontspec}
-    \IfFontExistsTF{Times New Roman}{
-        \setmainfont[Ligatures=Rare]{Times New Roman}}{
-        \IfFontExistsTF{Nimbus Roman}{
-            \setmainfont{Nimbus Roman}
-        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
-\fi
-
-% force serif fonts
-\addtokomafont{disposition}{\rmfamily}
-
-% }}}
-
-% {{{ formatting
-
-\pagenumbering{gobble}
-
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-    citecolor=black,
-    linkcolor=black
-}
-
-\KOMAoptions{
-    paper=A4,
-    parskip=half,
-    footnotes=multiple,
-}
-
-\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
-\setlength{\parindent}{0pt}
-
-\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
-
-\NewDocumentCommand \placeholder { o m } {
-    \underline{\IfNoValueTF{#1}{#2}{\makebox[#1em][l]{#2}}}
-}
-
-% }}}
+% \pncdiidentifier{PN-IV-RU-SC-PD-2026-1}
 
 \begin{document}
 
@@ -74,11 +12,11 @@
 \textbf{Declarație privind încadrarea în definiția organizației de cercetare}
 \end{center}
 
-Subsemnatul \placeholder[10]{} \textit{(numele şi prenumele reprezentantului legal al
-organizației de cercetare)}, în calitate de \placeholder[5]{} \textit{(funcția reprezentantului
-legal)} al \placeholder[10]{} \textit{(denumirea completă a organizației de cercetare)},
-declar pe proprie răspundere că sunt îndeplinite următoarele condiții privind încadrarea
-în definiția organizației de cercetare:
+\gendered{Subsemnatul}{Subsemnata} \placeholder[15]{} \textit{(numele şi prenumele reprezentantului
+legal al organizației de cercetare)}, în calitate de \placeholder[15]{} \textit{(funcția
+reprezentantului legal)} al \placeholder[12]{} \textit{(denumirea completă a organizației
+de cercetare)}, declar pe proprie răspundere că sunt îndeplinite următoarele condiții
+privind încadrarea în definiția organizației de cercetare:
 \begin{itemize}[leftmargin=*]
 \item
 Este o entitate\footnotemark[1], indiferent de statutul său juridic (organizație de drept public sau

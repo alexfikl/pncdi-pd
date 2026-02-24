@@ -1,68 +1,6 @@
-\documentclass[12pt]{scrartcl}
+\documentclass[draftproposal,form,masculine]{pncdi-pd}
 
-% {{{ packages
-
-\usepackage{iftex}
-\usepackage{xparse}
-
-% language
-\usepackage[romanian]{babel}
-\selectlanguage{romanian}
-
-% formatting
-\usepackage{geometry}
-\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
-\usepackage[table]{xcolor}
-
-% better environments
-\usepackage{csquotes}
-\usepackage[shortlabels]{enumitem}
-\usepackage{microtype}
-
-\ifpdftex
-    \usepackage[T1]{fontenc}
-    \usepackage{mathptmx}
-\else
-    \usepackage{fontspec}
-    \IfFontExistsTF{Times New Roman}{
-        \setmainfont[Ligatures=Rare]{Times New Roman}}{
-        \IfFontExistsTF{Nimbus Roman}{
-            \setmainfont{Nimbus Roman}
-        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
-\fi
-
-% force serif fonts
-\addtokomafont{disposition}{\rmfamily}
-
-% }}}
-
-% {{{ formatting
-
-\pagenumbering{gobble}
-
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-    citecolor=black,
-    linkcolor=black
-}
-
-\KOMAoptions{
-    paper=A4,
-    parskip=half,
-    footnotes=multiple,
-}
-
-\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
-\setlength{\parindent}{0pt}
-
-\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
-
-\NewDocumentCommand \placeholder { o m } {
-    \underline{\IfNoValueTF{#1}{#2}{\makebox[#1em][l]{#2}}}
-}
-
-% }}}
+% \pncdiidentifier{PN-IV-RU-SC-PD-2026-1}
 
 \begin{document}
 
@@ -75,8 +13,8 @@
 privind prelucrarea datelor cu caracter personal}
 \end{center}
 
-Subsemnatul, \placeholder[15]{}, având funcția de \placeholder[9]{} în cadrul
-\placeholder[15]{} \textit{(denumirea completă a instituției gazdă)}, declar că:
+\gendered{Subsemnatul}{Subsemnata}, \placeholder[15]{}, având funcția de \placeholder[9]{}
+în cadrul \placeholder[15]{} \textit{(denumirea completă a instituției gazdă)}, declar că:
 \begin{itemize}[leftmargin=*]
 \item
 Am fost informat cu privire la prevederile Regulamentului (UE) 679/26 aprilie 2016 privind
@@ -84,33 +22,33 @@ protecția persoanelor fizice în ceea ce privește prelucrarea datelor cu carac
 și privind libera circulație a acestor date.
 
 \item
-Am fost informat că beneficiez de dreptul de acces, de intervenție asupra datelor mele
-și dreptul de a nu fi supus unei decizii individuale.
+Am fost \gendered{informat}{informată} că beneficiez de dreptul de acces, de intervenție
+asupra datelor mele și dreptul de a nu fi \gendered{supus}{supusă} unei decizii individuale.
 
 \item
-Am fost informat că datele cu caracter personal urmează să fie prelucrate și stocate
-în cadrul UEFISCDI.
+Am fost \gendered{informat}{informată} că datele cu caracter personal urmează să fie
+prelucrate și stocate în cadrul UEFISCDI.
 
 \item
-Am fost informat că prelucrarea datelor mele cu caracter personal este necesară în vederea
-obligațiilor legale ce îi revin UEFISCDI, precum și în scopul intereselor și drepturilor
-ce îmi revin.
+Am fost \gendered{informat}{informată} că prelucrarea datelor mele cu caracter personal
+este necesară în vederea obligațiilor legale ce îi revin UEFISCDI, precum și în scopul
+intereselor și drepturilor ce îmi revin.
 
 \item
-Am fost informat că datele mele cu caracter personal sunt comunicate autorităților publice,
-precum și altor instituții abilitate (ex.: ANAF, ANFP, ITM, ANI, la solicitarea instanțelor
-judecătorești sau organelor de cercetare penală, etc.).
+Am fost \gendered{informat}{informată} că datele mele cu caracter personal sunt comunicate
+autorităților publice, precum și altor instituții abilitate (ex.: ANAF, ANFP, ITM, ANI,
+la solicitarea instanțelor judecătorești sau organelor de cercetare penală, etc.).
 
 \item
-Am fost informat că în scopul prelucrării exacte a datelor mele cu caracter personal, am
-obligația de a aduce la cunoștința UEFISCDI, orice modificare survenită asupra datelor mele
-personale.
+Am fost \gendered{informat}{informată} că în scopul prelucrării exacte a datelor mele cu
+caracter personal, am obligația de a aduce la cunoștința UEFISCDI, orice modificare
+survenită asupra datelor mele personale.
 
 \item
-Am fost informat că am dreptul să îmi retrag consimțământul în orice moment printr-o cerere
-scrisă, întemeiată, datată și semnată, depusă la sediul UEFISCDI, exceptând cazul în care
-prelucrarea datelor mele cu caracter personal este necesară în legătură cu raportul de
-muncă/serviciu.
+Am fost \gendered{informat}{informată} că am dreptul să îmi retrag consimțământul în
+orice moment printr-o cerere scrisă, întemeiată, datată și semnată, depusă la sediul
+UEFISCDI, exceptând cazul în care prelucrarea datelor mele cu caracter personal este
+necesară în legătură cu raportul de muncă/serviciu.
 \end{itemize}
 
 În consecință, îmi dau consimțământul pentru prelucrarea, transmiterea și stocarea datelor cu caracter

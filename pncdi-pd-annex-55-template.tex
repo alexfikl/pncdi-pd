@@ -1,68 +1,6 @@
-\documentclass[12pt]{scrartcl}
+\documentclass[draftproposal,form,masculine]{pncdi-pd}
 
-% {{{ packages
-
-\usepackage{iftex}
-\usepackage{xparse}
-
-% language
-\usepackage[romanian]{babel}
-\selectlanguage{romanian}
-
-% formatting
-\usepackage{geometry}
-\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
-\usepackage[table]{xcolor}
-
-% better environments
-\usepackage{csquotes}
-\usepackage[shortlabels]{enumitem}
-\usepackage{microtype}
-
-\ifpdftex
-    \usepackage[T1]{fontenc}
-    \usepackage{mathptmx}
-\else
-    \usepackage{fontspec}
-    \IfFontExistsTF{Times New Roman}{
-        \setmainfont[Ligatures=Rare]{Times New Roman}}{
-        \IfFontExistsTF{Nimbus Roman}{
-            \setmainfont{Nimbus Roman}
-        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
-\fi
-
-% force serif fonts
-\addtokomafont{disposition}{\rmfamily}
-
-% }}}
-
-% {{{ formatting
-
-\pagenumbering{gobble}
-
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-    citecolor=black,
-    linkcolor=black
-}
-
-\KOMAoptions{
-    paper=A4,
-    parskip=half,
-    footnotes=multiple,
-}
-
-\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
-\setlength{\parindent}{0pt}
-
-\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
-
-\NewDocumentCommand \placeholder { o m } {
-    \underline{\IfNoValueTF{#1}{#2}{\makebox[#1em][l]{#2}}}
-}
-
-% }}}
+% \pncdiidentifier{PN-IV-RU-SC-PD-2026-1}
 
 \begin{document}
 
@@ -78,7 +16,7 @@ prin care se certifică respectarea criteriilor de eligibilitate \\
 privind participarea în propuneri de proiecte}
 \end{center}
 
-Subsemnatul, \placeholder[17]{}, director al propunerii de proiect cu titlul:
+\gendered{Subsemnatul}{Subsemnata}, \placeholder[17]{}, director al propunerii de proiect cu titlul:
 \enquote{\placeholder[17]{}} depusă la Programul 5.2 – Resurse Umane, Subprogramul 5.2.1.
 Start în cercetare – \enquote{Proiecte de cercetare postdoctorală} PD 2026, declar pe
 propria răspundere că:

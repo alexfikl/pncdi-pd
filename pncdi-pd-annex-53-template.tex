@@ -1,68 +1,6 @@
-\documentclass[12pt]{scrartcl}
+\documentclass[draftproposal,form,masculine]{pncdi-pd}
 
-% {{{ packages
-
-\usepackage{iftex}
-\usepackage{xparse}
-
-% language
-\usepackage[romanian]{babel}
-\selectlanguage{romanian}
-
-% formatting
-\usepackage{geometry}
-\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
-\usepackage[table]{xcolor}
-
-% better environments
-\usepackage{csquotes}
-\usepackage[shortlabels]{enumitem}
-\usepackage{microtype}
-
-\ifpdftex
-    \usepackage[T1]{fontenc}
-    \usepackage{mathptmx}
-\else
-    \usepackage{fontspec}
-    \IfFontExistsTF{Times New Roman}{
-        \setmainfont[Ligatures=Rare]{Times New Roman}}{
-        \IfFontExistsTF{Nimbus Roman}{
-            \setmainfont{Nimbus Roman}
-        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
-\fi
-
-% force serif fonts
-\addtokomafont{disposition}{\rmfamily}
-
-% }}}
-
-% {{{ formatting
-
-\pagenumbering{gobble}
-
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-    citecolor=black,
-    linkcolor=black
-}
-
-\KOMAoptions{
-    paper=A4,
-    parskip=half,
-    footnotes=multiple,
-}
-
-\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
-\setlength{\parindent}{0pt}
-
-\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
-
-\NewDocumentCommand \placeholder { o m } {
-    \underline{\IfNoValueTF{#1}{#2}{\makebox[#1em][l]{#2}}}
-}
-
-% }}}
+% \pncdiidentifier{PN-IV-RU-SC-PD-2026-1}
 
 \begin{document}
 
@@ -77,9 +15,9 @@ certificarea legalității și corectitudinea informațiilor cuprinse în \\
 }
 \end{center}
 
-Subsemnatul, \placeholder[10]{} \textit{(numele și prenumele directorului de proiect)}
-declar pe propria răspundere că activitățile și lucrările din cadrul propunerii de proiect
-cu titlul: \enquote{\placeholder[8]{}} -- depusă la Programul 5.2 -- Resurse Umane,
+\gendered{Subsemnatul}{Subsemnata}, \placeholder[10]{} \textit{(numele și prenumele directorului
+de proiect)} declar pe propria răspundere că activitățile și lucrările din cadrul propunerii
+de proiect cu titlul: \enquote{\placeholder[8]{}} -- depusă la Programul 5.2 -- Resurse Umane,
 Subprogramul 5.2.1. Start în cercetare -- \enquote{Proiecte de cercetare postdoctorală}
 PD 2026, \textbf{nu sunt și nu au fost finanțate din alte surse bugetare}.
 
@@ -91,7 +29,7 @@ De asemenea, confirm că nu am mai beneficiat de un proiect de cercetare tip PD,
 PCE finanțat din Planul Național de Cercetare, Dezvoltare și Inovare, în calitate de
 director de proiect.
 
-Înțeleg că, dacă Cererea de finanțare nu este completă cu privire la toate detaliile și
+Înțeleg că, dacă \enquote{Cererea de finanțare} nu este completă cu privire la toate detaliile și
 aspectele solicitate, inclusiv această declarație, propunerea de proiect ar putea fi respinsă.
 
 \bigskip
