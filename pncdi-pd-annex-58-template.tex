@@ -1,0 +1,102 @@
+\documentclass[12pt]{scrartcl}
+
+% {{{ packages
+
+\usepackage{iftex}
+\usepackage{xparse}
+
+% language
+\usepackage[romanian]{babel}
+\selectlanguage{romanian}
+
+% formatting
+\usepackage{geometry}
+\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
+\usepackage[table]{xcolor}
+
+% better environments
+\usepackage{csquotes}
+\usepackage[shortlabels]{enumitem}
+\usepackage{microtype}
+
+\ifpdftex
+    \usepackage[T1]{fontenc}
+    \usepackage{mathptmx}
+\else
+    \usepackage{fontspec}
+    \IfFontExistsTF{Times New Roman}{
+        \setmainfont[Ligatures=Rare]{Times New Roman}}{
+        \IfFontExistsTF{Nimbus Roman}{
+            \setmainfont{Nimbus Roman}
+        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
+\fi
+
+% force serif fonts
+\addtokomafont{disposition}{\rmfamily}
+
+% }}}
+
+% {{{ formatting
+
+\pagenumbering{gobble}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    citecolor=black,
+    linkcolor=black
+}
+
+\KOMAoptions{
+    paper=A4,
+    parskip=half,
+    footnotes=multiple,
+}
+
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\setlength{\parindent}{0pt}
+
+\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
+
+\NewDocumentCommand \placeholder { o m } {
+    \underline{\IfNoValueTF{#1}{#2}{\makebox[#1em][l]{#2}}}
+}
+
+% }}}
+
+\begin{document}
+
+\textbf{Anexa 5.8 -- Acordul mentorului}
+
+\bigskip
+
+\begin{center}
+\textbf{Acordul mentorului}
+\end{center}
+
+Subsemnatul \placeholder[10]{} \textit{(numele şi prenumele)} angajat al \placeholder[10]{}
+\textit{(denumirea completă a organizației de cercetare)}, prin prezenta îmi declar
+acordul de a participa în calitate de Mentor la proiectul cu titlul \enquote{\placeholder[15]{}},
+director proiect \placeholder[10]{} \textit{(numele şi prenumele)}, depus în competiția
+\enquote{Proiecte de cercetare postdoctorală} PD 2026.
+
+De asemenea, confirm că informațiile incluse în această propunere de proiect, precum și
+detaliile prezentate în documentele anexate și informațiile completate în platforma de
+depunere sunt legale și corecte.
+
+\textbf{Declarație pe proprie răspundere, sub sancțiunea eliminării din competiție sau
+sancțiunile aplicate faptei de fals în acte publice.}
+
+\bigskip
+
+{
+\noindent \begin{tabular}{@{}p{0.45\textwidth}p{0.55\textwidth}@{}}
+Data: & \textbf{\rodate} \\[1em]
+Mentor & Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
+& Semnătura
+\end{tabular}
+}
+
+\end{document}
+
+% kate: default-dictionary ro_RO;

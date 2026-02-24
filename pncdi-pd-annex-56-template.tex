@@ -1,0 +1,134 @@
+\documentclass[12pt]{scrartcl}
+
+% {{{ packages
+
+\usepackage{iftex}
+\usepackage{xparse}
+
+% language
+\usepackage[romanian]{babel}
+\selectlanguage{romanian}
+
+% formatting
+\usepackage{geometry}
+\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
+\usepackage[table]{xcolor}
+
+% better environments
+\usepackage{csquotes}
+\usepackage[shortlabels]{enumitem}
+\usepackage{microtype}
+
+\ifpdftex
+    \usepackage[T1]{fontenc}
+    \usepackage{mathptmx}
+\else
+    \usepackage{fontspec}
+    \IfFontExistsTF{Times New Roman}{
+        \setmainfont[Ligatures=Rare]{Times New Roman}}{
+        \IfFontExistsTF{Nimbus Roman}{
+            \setmainfont{Nimbus Roman}
+        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
+\fi
+
+% force serif fonts
+\addtokomafont{disposition}{\rmfamily}
+
+% }}}
+
+% {{{ formatting
+
+\pagenumbering{gobble}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    citecolor=black,
+    linkcolor=black
+}
+
+\KOMAoptions{
+    paper=A4,
+    parskip=half,
+    footnotes=multiple,
+}
+
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\setlength{\parindent}{0pt}
+
+\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
+
+\NewDocumentCommand \placeholder { o m } {
+    \underline{\IfNoValueTF{#1}{#2}{\makebox[#1em][l]{#2}}}
+}
+
+% }}}
+
+\begin{document}
+
+\textbf{Anexa 5.6 -- Declarație de consimțământ privind prelucrarea datelor cu caracter personal}
+
+\bigskip
+
+\begin{center}
+\textbf{Declarație de consimțământ \\
+privind prelucrarea datelor cu caracter personal}
+\end{center}
+
+Subsemnatul, \placeholder[15]{}, având funcția de \placeholder[9]{} în cadrul
+\placeholder[15]{} \textit{(denumirea completă a instituției gazdă)}, declar că:
+\begin{itemize}[leftmargin=*]
+\item
+Am fost informat cu privire la prevederile Regulamentului (UE) 679/26 aprilie 2016 privind
+protecția persoanelor fizice în ceea ce privește prelucrarea datelor cu caracter personal
+și privind libera circulație a acestor date.
+
+\item
+Am fost informat că beneficiez de dreptul de acces, de intervenție asupra datelor mele
+și dreptul de a nu fi supus unei decizii individuale.
+
+\item
+Am fost informat că datele cu caracter personal urmează să fie prelucrate și stocate
+în cadrul UEFISCDI.
+
+\item
+Am fost informat că prelucrarea datelor mele cu caracter personal este necesară în vederea
+obligațiilor legale ce îi revin UEFISCDI, precum și în scopul intereselor și drepturilor
+ce îmi revin.
+
+\item
+Am fost informat că datele mele cu caracter personal sunt comunicate autorităților publice,
+precum și altor instituții abilitate (ex.: ANAF, ANFP, ITM, ANI, la solicitarea instanțelor
+judecătorești sau organelor de cercetare penală, etc.).
+
+\item
+Am fost informat că în scopul prelucrării exacte a datelor mele cu caracter personal, am
+obligația de a aduce la cunoștința UEFISCDI, orice modificare survenită asupra datelor mele
+personale.
+
+\item
+Am fost informat că am dreptul să îmi retrag consimțământul în orice moment printr-o cerere
+scrisă, întemeiată, datată și semnată, depusă la sediul UEFISCDI, exceptând cazul în care
+prelucrarea datelor mele cu caracter personal este necesară în legătură cu raportul de
+muncă/serviciu.
+\end{itemize}
+
+În consecință, îmi dau consimțământul pentru prelucrarea, transmiterea și stocarea datelor cu caracter
+personal, de către UEFISCDI.
+
+\bigskip
+
+{
+\noindent \begin{tabular}{@{}p{0.45\textwidth}p{0.55\textwidth}@{}}
+Data: & \textbf{\rodate} \\[1em]
+Reprezentant legal & Funcția: \textbf{Funcția} \\[0.3em]
+& Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
+& Semnătura \\[2em]
+Director de proiect & Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
+& Semnătura
+\end{tabular}
+}
+
+\end{document}
+
+% kate: default-dictionary ro_RO;

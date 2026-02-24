@@ -4,14 +4,19 @@
 
 \usepackage{iftex}
 \usepackage{xparse}
+
+% language
+\usepackage[romanian]{babel}
+\selectlanguage{romanian}
+
+% formatting
 \usepackage{geometry}
 \usepackage[hypertexnames=false,breaklinks=true]{hyperref}
 \usepackage[table]{xcolor}
 
 % better environments
+\usepackage{csquotes}
 \usepackage[shortlabels]{enumitem}
-
-% better typography
 \usepackage{microtype}
 
 \ifpdftex
@@ -71,7 +76,7 @@
 
 Subsemnatul \placeholder[10]{} \textit{(numele şi prenumele reprezentantului legal al
 organizației de cercetare)}, în calitate de \placeholder[5]{} \textit{(funcția reprezentantului
-legal)} al \placeholder[10]{} \textit{(denumirea completă a organizaţiei de cercetare)},
+legal)} al \placeholder[10]{} \textit{(denumirea completă a organizației de cercetare)},
 declar pe proprie răspundere că sunt îndeplinite următoarele condiții privind încadrarea
 în definiția organizației de cercetare:
 \begin{itemize}[leftmargin=*]
@@ -100,7 +105,9 @@ la rezultatele generate de aceasta.
 
 \bigskip
 
-\textbf{Declaraţie pe proprie răspundere, sub sancţiunile aplicate faptei de fals în acte publice.}
+\textbf{Declarație pe proprie răspundere, sub sancțiunile aplicate faptei de fals în acte publice.}
+
+\bigskip
 
 {
 \noindent \begin{tabular}{@{}p{0.45\textwidth}p{0.55\textwidth}@{}}
@@ -108,7 +115,7 @@ Data: & \textbf{\rodate} \\[1em]
 Reprezentant legal & Funcția: \textbf{Funcția} \\[0.3em]
 & Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
 & Semnătura \\[2em]
-Director proiect & Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
+Director de proiect & Numele și prenumele: \textbf{Nume, Prenume} \\[0.3em]
 & Semnătura
 \end{tabular}
 }

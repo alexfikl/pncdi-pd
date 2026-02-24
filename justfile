@@ -17,12 +17,12 @@ template:
     # @just pdf pncdi-pd-annex-31-cv-template
     @just pdf pncdi-pd-annex-51-template
     @just pdf pncdi-pd-annex-52-template
-    # @just pdf pncdi-pd-annex-53-template
-    # @just pdf pncdi-pd-annex-54-template
-    # @just pdf pncdi-pd-annex-55-template
-    # @just pdf pncdi-pd-annex-56-template
-    # @just pdf pncdi-pd-annex-57-template
-    # @just pdf pncdi-pd-annex-58-template
+    @just pdf pncdi-pd-annex-53-template
+    @just pdf pncdi-pd-annex-54-template
+    @just pdf pncdi-pd-annex-55-template
+    @just pdf pncdi-pd-annex-56-template
+    @just pdf pncdi-pd-annex-57-template
+    @just pdf pncdi-pd-annex-58-template
 
 [doc("Check for typos (using typos)")]
 typos:
