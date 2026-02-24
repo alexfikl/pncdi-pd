@@ -69,6 +69,9 @@
 
 % <<< commands
 
+\NewDocumentCommand \pncdiauthor { m } {\def\pncdi@author{#1}}
+\NewDocumentCommand \pncdititle { m } {\def\pncdi@title{#1}}
+\NewDocumentCommand \pncdiinstitution { m } {\def\pncdi@institution{#1}}
 \NewDocumentCommand \pncdiidentifier { m } {\def\pncdi@identifier{#1}}
 
 \NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
