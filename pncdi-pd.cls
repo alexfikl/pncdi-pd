@@ -91,6 +91,12 @@
 }%
 }
 
+\if@draftproposal
+    \NewDocumentCommand \comment { m } {\textit{#1}}
+\else
+    \NewDocumentCommand \comment { m } {}
+\fi
+
 % >>>
 
 % <<< required formatting
