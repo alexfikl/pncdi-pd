@@ -24,13 +24,21 @@
 \newif\if@feminine \@femininefalse
 \DeclareOption{feminine}{\@femininetrue}
 
-% draft features
-\newif\if@form \@formfalse
-\DeclareOption{form}{\@formtrue}
+% part features
+\newif\if@pncdiform \@pncdiformfalse
+\DeclareOption{pncdiform}{\@pncdiformtrue}
+\newif\if@pncdia \@pncdiafalse
+\DeclareOption{pncdia}{\@pncdiatrue}
+\newif\if@pncdib \@pncdibfalse
+\DeclareOption{pncdib}{\@pncdibtrue}
+\newif\if@pncdic \@pncdicfalse
+\DeclareOption{pncdic}{\@pncdictrue}
 
 % grid
 \newif\if@layoutgrid \@layoutgridfalse
 \DeclareOption{layoutgrid}{\@layoutgridtrue}
+\newif\if@showframe \@showframefalse
+\DeclareOption{showframe}{\@showframetrue}
 
 % additional options passed to `scrartcl` class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
@@ -47,9 +55,17 @@
 
 \RequirePackage{iftex}
 \RequirePackage{xparse}
-\RequirePackage{geometry}
 \RequirePackage[table]{xcolor}
 \RequirePackage[hypertexnames=false,breaklinks=true]{hyperref}
+
+% geometry
+\RequirePackage[
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    footskip=1.15cm,
+]{geometry}
 
 % customize headers and footers
 \RequirePackage{scrlayer-scrpage}
@@ -104,6 +120,8 @@
 
 % <<< required formatting
 
+\definecolor{PNCDITableYellow}{RGB}{255, 255, 204}
+
 \singlespacing
 \setstretch{1.15}
 
@@ -122,20 +140,18 @@
 % force serif fonts
 \addtokomafont{disposition}{\rmfamily}
 
-\typearea{14}
-\AfterCalculatingTypearea{
-    \geometry{top=2cm, bottom=2cm, left=2cm, right=2cm, footskip=0.5cm, headsep=0.5cm}
-}
-
 % enable this to better check sizing
+\if@showframe
+    \RequirePackage{showframe}
+\fi
+
 \if@layoutgrid
     \RequirePackage[
-        grid, gridBG,
-        gridunit=mm,
-        gridcolor=ERCTableGray,
-        subgridcolor=ERCTableGray,
+        grid,
+        gridunit=cm,
+        gridcolor=gray!70,
+        subgridcolor=gray!70,
         texcoord]{eso-pic}
-    \geometry{showframe=true}
 \fi
 
 \AtBeginDocument{
@@ -160,10 +176,35 @@
 
 \pncdiidentifier{PN-IV-RU-SC-PD-2026-1}
 
-\if@form
+\if@pncdiform
     \clearpairofpagestyles
     \cfoot{\normalfont \pncdi@identifier}
     \pagenumbering{gobble}
 \fi
+
+\if@pncdia
+    \clearpairofpagestyles
+    \cfoot{\normalfont \pncdi@identifier}
+    \pagenumbering{gobble}
+\fi
+
+% >>>
+
+% <<< section styles
+
+% tighted sections a bit for more space
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{section}
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{subsection}
+\RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em, font=\normalsize\bfseries]{subsubsection}
+
+\if@pncdia
+    \renewcommand{\thesection}{A.\arabic{section}.}
+\fi
+
+\if@pncdib
+    \renewcommand{\thesection}{B.\arabic{section}.}
+\fi
+
+\renewcommand*{\thesubsection}{\thesection\arabic{subsection}.}
 
 % >>>
