@@ -14,7 +14,7 @@ pdf basename:
 template:
     @just pdf pncdi-pd-annex-3-a-template
     @just pdf pncdi-pd-annex-3-b-template
-    # @just pdf pncdi-pd-annex-31-cv-template
+    @just pdf pncdi-pd-annex-31-cv-template
     @just pdf pncdi-pd-annex-51-template
     @just pdf pncdi-pd-annex-52-template
     @just pdf pncdi-pd-annex-53-template

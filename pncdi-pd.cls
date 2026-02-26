@@ -126,7 +126,6 @@
     \def\draftheader{\empty}
 \fi
 
-
 \newenvironment{pncdiexplanation}{
     \begingroup
     \setlist{leftmargin=*, nosep}
@@ -147,6 +146,7 @@
 % <<< required formatting
 
 \definecolor{PNCDITableGray}{RGB}{217, 217, 217}
+\definecolor{PNCDITableLightGray}{RGB}{242, 242, 242}
 \definecolor{PNCDITableYellow}{RGB}{255, 255, 204}
 
 \singlespacing
@@ -235,6 +235,11 @@
     \cfoot{\normalfont \pncdi@identifier}
     \ofoot{\pagemark}
     \ihead{\draftheader}
+\fi
+
+\if@pncdic
+    \cfoot{\normalfont \pncdi@identifier}
+    \pagenumbering{gobble}
 \fi
 
 % >>>
