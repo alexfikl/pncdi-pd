@@ -42,7 +42,7 @@
 
 % additional options passed to `scrartcl` class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
-\PassOptionsToClass{a4paper, fontsize=11bp, parskip=half, footnotes=multiple}{scrartcl}
+\PassOptionsToClass{a4paper, fontsize=11bp, parskip=half-, footnotes=multiple}{scrartcl}
 
 \ProcessOptions
 \LoadClass{scrartcl}
@@ -111,6 +111,32 @@
 }
 
 \if@draftproposal
+    \newcount\timehh
+    \timehh=\time \divide\timehh by 60
+    \newcount\timemm
+    \timemm=\time \count255=\timehh \multiply\count255 by -60 \advance\timemm by \count255
+
+    \def\draftheader{
+        \textcolor{black!50}{
+        \textit{Draft of \today\ at
+        \ifnum\timehh<10 0\fi\number\timehh
+        \,:\,%
+        \ifnum\timemm<10 0\fi\number\timemm}}}
+\else
+    \def\draftheader{\empty}
+\fi
+
+
+\newenvironment{pncdiexplanation}{
+    \begingroup
+    \setlist{leftmargin=*, nosep}
+    \setlength{\parskip}{0pt}%
+    \itshape
+}{
+    \endgroup
+}
+
+\if@draftproposal
     \NewDocumentCommand \comment { m } {\textit{#1}}
 \else
     \NewDocumentCommand \comment { m } {}
@@ -120,6 +146,7 @@
 
 % <<< required formatting
 
+\definecolor{PNCDITableGray}{RGB}{217, 217, 217}
 \definecolor{PNCDITableYellow}{RGB}{255, 255, 204}
 
 \singlespacing
@@ -170,22 +197,44 @@
 }
 \renewcommand{\UrlFont}{\bfseries\ttfamily}
 
+\if@pncdib
+    \if@draftproposal
+        \RequirePackage[mathlines]{lineno}
+        \RenewDocumentCommand \linenumberfont {} {
+            \normalfont\footnotesize\textcolor{black!50}
+        }
+
+        \AtBeginDocument{
+            \if@draftproposal
+                \linenumbers
+            \fi
+        }
+    \fi
+\fi
+
 % >>>
 
 % <<< page header/footer styles
 
 \pncdiidentifier{PN-IV-RU-SC-PD-2026-1}
 
+\clearpairofpagestyles
+\pagestyle{scrheadings}
+
 \if@pncdiform
-    \clearpairofpagestyles
     \cfoot{\normalfont \pncdi@identifier}
     \pagenumbering{gobble}
 \fi
 
 \if@pncdia
-    \clearpairofpagestyles
     \cfoot{\normalfont \pncdi@identifier}
     \pagenumbering{gobble}
+\fi
+
+\if@pncdib
+    \cfoot{\normalfont \pncdi@identifier}
+    \ofoot{\pagemark}
+    \ihead{\draftheader}
 \fi
 
 % >>>
@@ -193,9 +242,9 @@
 % <<< section styles
 
 % tighted sections a bit for more space
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{section}
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{subsection}
-\RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em, font=\normalsize\bfseries]{subsubsection}
+\RedeclareSectionCommand[beforeskip=0.0em, afterskip=0.01em, font=\normalsize\bfseries]{section}
+\RedeclareSectionCommand[beforeskip=0.0em, afterskip=0.01em, font=\normalsize\bfseries]{subsection}
+\RedeclareSectionCommand[beforeskip=0.0em, afterskip=0.01em, font=\normalsize\bfseries]{subsubsection}
 
 \if@pncdia
     \renewcommand{\thesection}{A.\arabic{section}.}
@@ -206,5 +255,6 @@
 \fi
 
 \renewcommand*{\thesubsection}{\thesection\arabic{subsection}.}
+\renewcommand*{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
 
 % >>>
