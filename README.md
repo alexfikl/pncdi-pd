@@ -104,6 +104,9 @@ The template defines the following commands.
 | `\placeholder*[<w>]{<>}`          | Adds a little dotted placeholder for forms |
 | `\comment{<>}`                    | Adds italic text based on `draftproposal` |
 
+The `\pncdiidentifier` command should generally not be set by the user. Instead
+we suggest updating the template in `pncdi-pd.cls`.
+
 The `\placeholder` command is slightly more complex and requires additional
 explanation. It can be used to achieve 3 results based on the options:
 
@@ -112,6 +115,9 @@ explanation. It can be used to achieve 3 results based on the options:
 2. `\placehoder[10]{Content}`: ignores the `[10]` dots part (could even be removed)
    and just shows the contents.
 3. `\placeholder*{Content}`: similar to the above, but makes the text bold.
+
+The empty dotted placeholders (as provided here), use the first form. The user can
+then fill them in using the second or third form, as desired.
 
 ## License
 

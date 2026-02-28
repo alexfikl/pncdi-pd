@@ -87,13 +87,19 @@
 
 \NewDocumentCommand \pncdiauthor { m } {\def\pncdi@author{#1}}
 \NewDocumentCommand \pncdititle { m } {\def\pncdi@title{#1}}
-\NewDocumentCommand \pncdititle { m } {\def\pncdi@title{#1}}
+\NewDocumentCommand \pncdiacronym { m } {\def\pncdi@acronym{#1}}
 \NewDocumentCommand \pncdiinstitution { m } {\def\pncdi@institution{#1}}
 \NewDocumentCommand \pncdiidentifier { m } {\def\pncdi@identifier{#1}}
 
-\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
+\NewDocumentCommand \insertpncdiauthor {} {\pncdi@author}
+\NewDocumentCommand \insertpncdititle {} {\pncdi@title}
+\NewDocumentCommand \insertpncdiacronym {} {\pncdi@acronym}
+\NewDocumentCommand \insertpncdiinstitution {} {\pncdi@institution}
+\NewDocumentCommand \insertpncdiidentifier {} {\pncdi@identifier}
 
-\NewDocumentCommand \gendered { m m } {\if@masculine #1\else \if@feminine #2 \else \textbf{??REF} \fi \fi}
+\NewDocumentCommand \rodate {} {\the\day.\the\month.\the\year}
+\NewDocumentCommand \gendered { m m } {\if@masculine #1\else \if@feminine #2 \else \textbf{NOGENDER} \fi \fi}
+
 \NewDocumentCommand \placeholder {s O{8} m} {%
 \IfBlankTF{#3}{
     % no argument given
