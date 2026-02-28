@@ -5,7 +5,7 @@
 
 > [!WARNING]
 > These templates target the PD 2026 call, which is still not finalized. As such,
-> they have not been submitted to the UEFISCDI yet and may be inelligible. However,
+> they have **not been submitted** to the UEFISCDI yet and may be inelligible. However,
 > we strive to keep as close as possible to the provided documents and will update
 > the template as required going forward. Any suggestions for improvements and
 > bug reports for inconsistencies are **very welcome**!
@@ -15,11 +15,11 @@ This repository contains templates for the
 from UEFISCDI. The latest version targets the PD 2026 call and contains templates
 for the forms in the manual annexes. In particular, we have
 
-1. Annex 3A: Identification Information (this is provided for book keeping and
+1. **Annex 3 A**: Identification Information (this is provided for book keeping and
    should not be submitted).
-2. Annex 3B: Project Description (main document).
-3. Annex 3.1: CV.
-4. Annex 5.1-5.8: Various forms and disclosures required for grant submission.
+2. **Annex 3 B**: Project Description (main document).
+3. **Annex 3.1**: CV.
+4. **Annex 5.1-5.8**: Various forms and disclosures required for grant submission.
 
 > [!WARNING]
 > These are not all the required documents for the grant. Read the official
