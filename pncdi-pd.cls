@@ -78,8 +78,13 @@
 \RequirePackage[activate=true,final]{microtype}
 
 % language
-\RequirePackage[romanian]{babel}
-\selectlanguage{romanian}
+\if@pncdiform
+    \RequirePackage[romanian]{babel}
+    \selectlanguage{romanian}
+\else
+    \RequirePackage[english]{babel}
+    \selectlanguage{english}
+\fi
 
 % >>>
 
