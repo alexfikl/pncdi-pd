@@ -5,7 +5,7 @@
 
 > [!WARNING]
 > These templates target the **PD 2026** call, which is still not finalized. As such,
-> they have **not been submitted** to the UEFISCDI yet and may be inelligible. However,
+> they have **not been submitted** to the UEFISCDI yet and may be ineligible. However,
 > we strive to keep as close as possible to the provided documents and will update
 > the template as required going forward. Any suggestions for improvements and
 > bug reports for inconsistencies are **very welcome**!
@@ -65,7 +65,7 @@ help with the typography of it all!
 
 The CV should be filled in through the `pncdi-pd-annex-31-cv-template.tex` document.
 
-The `pncdi-pd-annex-3-a-template.tex` contains addititional metadata about the
+The `pncdi-pd-annex-3-a-template.tex` contains additional metadata about the
 project and should not be submitted. This information needs to be filled in on the
 EVOC platform at submission time.
 
@@ -105,7 +105,7 @@ and should not be changed. The template also defines the following commands.
 | `\insertpncdititle`               | Retrieves the project title           |
 | `\pncdiacronym{<>}`               | Project acronym                       |
 | `\insertpncdiacronym`             | Retrieves the project acronym
-| `\pncdiinstitution{<>}`           | The hosting instutition for the project |
+| `\pncdiinstitution{<>}`           | The hosting institution for the project |
 | `\insertpncdiinstitution`         | Retrieves the host institution        |
 | `\pncdiidentifier{<>}`            | Sets the grant call identifier        |
 | `\insertpncdiidentifier`          | Retrieves the grant call identifier   |

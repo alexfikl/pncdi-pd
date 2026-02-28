@@ -1,4 +1,8 @@
 [files]
 extend-exclude = [
-    "*.tex"
+    "pncdi-pd-annex-5*-template.tex"
 ]
+
+[default.extend-words]
+PN = "PN"
+

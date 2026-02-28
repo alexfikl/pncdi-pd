@@ -20,6 +20,8 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - uses: crate-ci/typos@master
+      with:
+        config: typos.toml
 
   build:
     name: Build (${{ matrix.engine }}-${{ matrix.texlive_version }})
