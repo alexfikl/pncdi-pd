@@ -4,7 +4,7 @@
 [![Open in Overleaf](https://img.shields.io/static/v1?label=LaTeX&message=Open-in-Overleaf&color=47a141&style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/alexfikl/pncdi-pd/archive/refs/heads/main.zip)
 
 > [!WARNING]
-> These templates target the PD 2026 call, which is still not finalized. As such,
+> These templates target the **PD 2026** call, which is still not finalized. As such,
 > they have **not been submitted** to the UEFISCDI yet and may be inelligible. However,
 > we strive to keep as close as possible to the provided documents and will update
 > the template as required going forward. Any suggestions for improvements and
@@ -47,6 +47,15 @@ In particular:
 3. Adding signatures probably requires printing or using some fancier electronic
    signature. Consult the official manual and instructions for this part.
 
+The gender should be chosen appropriately for each document and form (the forms
+are meant for the project director, mentor, and institution representative and
+could have different genders!). This is mostly meant to avoid writings like
+`Subsemnatul/Subsemnata` and instead uses a command
+```tex
+\gendered{Subsemnatul}{Subsemnata}
+```
+that dynamically changes based on the class option.
+
 ### Project Description
 
 The main project description can be found in `pncdi-pd-annex-3-b-template.tex`.
@@ -59,6 +68,13 @@ The CV should be filled in through the `pncdi-pd-annex-31-cv-template.tex` docum
 The `pncdi-pd-annex-3-a-template.tex` contains addititional metadata about the
 project and should not be submitted. This information needs to be filled in on the
 EVOC platform at submission time.
+
+### Gantt Charts
+
+A Gantt chart must also be provided in the proposal. There are some LaTeX packages,
+e.g. [pgfgantt](https://ctan.org/pkg/pgfgantt?lang=en), that can be used to
+create such charts. However, you can also just use a third party application,
+export the chart as a PNG or PDF, and include it like that.
 
 ## Documentation
 
@@ -79,13 +95,7 @@ are given below.
 | `layoutgrid`                      | Shows a grid on the page to check margins (debug) |
 
 All the templates in this project are already correctly marked with e.g. `pncdiform`
-and should not be changed. However, the gender should be chosen appropriately
-for each document and form (the forms are meant for the project director, mentor,
-and institution representative and could have different genders!). This is mostly
-meant to avoid writings like `Subsemnatul/Subsemnata` and uses the command
-`\gendered{<masculine>}{<feminine>}`.
-
-The template defines the following commands.
+and should not be changed. The template also defines the following commands.
 
 | Command                           | Description                           |
 | :-                                | :-                                    |
