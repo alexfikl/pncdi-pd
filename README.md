@@ -1,6 +1,6 @@
 # PNCDI-PD: LaTeX Template
 
-[![GitHub Actions Workflow Status](https://github.com/alexfikl/pncdi/actions/workflows/ci.yml/badge.svg)](https://github.com/alexfikl/pncdi-pd/actions/workflows/ci.yml)
+[![GitHub Actions Workflow Status](https://github.com/alexfikl/pncdi-pd/actions/workflows/ci.yml/badge.svg)](https://github.com/alexfikl/pncdi-pd/actions/workflows/ci.yml)
 [![Open in Overleaf](https://img.shields.io/static/v1?label=LaTeX&message=Open-in-Overleaf&color=47a141&style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/alexfikl/pncdi-pd/archive/refs/heads/main.zip)
 
 > [!WARNING]
