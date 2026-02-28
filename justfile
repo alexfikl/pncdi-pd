@@ -3,7 +3,7 @@ TEXOUTDIR := "latex.out"
 TEXFLAGS := "-pdflua -output-directory=" + TEXOUTDIR
 
 _default:
-    @just --list
+    @just template
 
 [private]
 pdf basename:
