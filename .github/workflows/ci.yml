@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '30 12 * * 0'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typos:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    name: Spelling (typos)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - uses: crate-ci/typos@master
+
+  build:
+    name: Build (${{ matrix.engine }}-${{ matrix.texlive_version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        engine: ['pdflatex', 'lualatex']
+        texlive_version: ['2023', '2024', '2025']
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Compile LaTeX template
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: |
+            pncdi-pd-annex-3-a-template.tex
+            pncdi-pd-annex-3-b-template.tex
+            pncdi-pd-annex-31-cv-template.tex
+            pncdi-pd-annex-51-template.tex
+            pncdi-pd-annex-52-template.tex
+            pncdi-pd-annex-53-template.tex
+            pncdi-pd-annex-54-template.tex
+            pncdi-pd-annex-55-template.tex
+            pncdi-pd-annex-56-template.tex
+            pncdi-pd-annex-57-template.tex
+            pncdi-pd-annex-58-template.tex
+
+          texlive_version: ${{ matrix.texlive_version }}
+          latexmk_use_lualatex: ${{ matrix.engine == 'lualatex' }}
