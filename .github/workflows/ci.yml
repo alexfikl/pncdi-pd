@@ -18,7 +18,7 @@ jobs:
     name: Spelling (typos)
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: crate-ci/typos@master
       with:
         config: typos.toml
@@ -33,7 +33,7 @@ jobs:
       fail-fast: false
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Compile LaTeX template
         uses: xu-cheng/latex-action@v4
         with:
