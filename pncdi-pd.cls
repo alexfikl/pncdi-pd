@@ -3,8 +3,8 @@
 
 % <<< preamble
 
-\def\fileversion{v1.0}
-\def\filedate{2026/02/24}
+\def\fileversion{v2026.1}
+\def\filedate{2026/06/29}
 \def\clsname{pncdi-pd}
 
 \NeedsTeXFormat{LaTeX2e}
