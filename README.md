@@ -4,8 +4,8 @@
 [![Open in Overleaf](https://img.shields.io/static/v1?label=LaTeX&message=Open-in-Overleaf&color=47a141&style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/alexfikl/pncdi-pd/archive/refs/heads/main.zip)
 
 > [!WARNING]
-> These templates target the **PD 2026** call, which is still not finalized. As such,
-> they have **not been submitted** to the UEFISCDI yet and may be ineligible. However,
+> These templates target the **PD 2026** call. As such, a proposal with this template
+> has not yet been submitted to the UEFISCDI and it may be ineligible. However,
 > we strive to keep as close as possible to the provided documents and will update
 > the template as required going forward. Any suggestions for improvements and
 > bug reports for inconsistencies are **very welcome**!
@@ -67,7 +67,7 @@ The CV should be filled in through the `pncdi-pd-annex-31-cv-template.tex` docum
 
 The `pncdi-pd-annex-3-a-template.tex` contains additional metadata about the
 project and should not be submitted. This information needs to be filled in on the
-EVOC platform at submission time.
+[uefiscdi-direct.ro](https://uefiscdi-direct.ro) platform at submission time.
 
 ### Gantt Charts
 
@@ -104,7 +104,7 @@ and should not be changed. The template also defines the following commands.
 | `\pncdititle{<>}`                 | Project full title                    |
 | `\insertpncdititle`               | Retrieves the project title           |
 | `\pncdiacronym{<>}`               | Project acronym                       |
-| `\insertpncdiacronym`             | Retrieves the project acronym
+| `\insertpncdiacronym`             | Retrieves the project acronym         |
 | `\pncdiinstitution{<>}`           | The hosting institution for the project |
 | `\insertpncdiinstitution`         | Retrieves the host institution        |
 | `\pncdiidentifier{<>}`            | Sets the grant call identifier        |
@@ -115,14 +115,14 @@ and should not be changed. The template also defines the following commands.
 | `\comment{<>}`                    | Adds italic text based on `draftproposal` |
 
 The `\pncdiidentifier` command should generally not be set by the user. Instead
-we suggest updating the template in `pncdi-pd.cls`.
+we suggest sending a PR to update the identifier in `pncdi-pd.cls`.
 
 The `\placeholder` command is slightly more complex and requires additional
 explanation. It can be used to achieve 3 results based on the options:
 
 1. `\placeholder[10]{}`: adds a set of 10 uniformly spaced dots to signal a part
    of a form that needs to be filled in.
-2. `\placehoder[10]{Content}`: ignores the `[10]` dots part (could even be removed)
+2. `\placeholder[10]{Content}`: ignores the `[10]` dots part (could even be removed)
    and just shows the contents.
 3. `\placeholder*{Content}`: similar to the above, but makes the text bold.
 
