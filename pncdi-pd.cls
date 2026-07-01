@@ -146,19 +146,20 @@
     \def\draftheader{\empty}
 \fi
 
-\newenvironment{pncdiexplanation}{
-    \begingroup
-    \setlist{leftmargin=*, nosep}
-    \setlength{\parskip}{0pt}%
-    \itshape
-}{
-    \endgroup
-}
-
 \if@draftproposal
     \NewDocumentCommand \comment { m } {\textit{#1}}
+
+    \newenvironment{pncdiexplanation}{
+        \begingroup
+        \setlist{leftmargin=*, nosep}
+        \setlength{\parskip}{0pt}%
+        \itshape
+    }{
+        \endgroup
+    }
 \else
     \NewDocumentCommand \comment { m } {}
+    \newenvironment{pncdiexplanation}{\setbox\z@\vbox\bgroup}{\egroup}
 \fi
 
 % >>>
