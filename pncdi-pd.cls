@@ -169,11 +169,11 @@
     \usepackage{mathptmx}
 \else
     \usepackage{fontspec}
-    \IfFontExistsTF{Times New Roman}{
-        \setmainfont[Ligatures=Rare]{Times New Roman}}{
-        \IfFontExistsTF{Nimbus Roman}{
+    \IfFontExistsTF{Nimbus Roman}{
             \setmainfont{Nimbus Roman}
-        }{\PackageWarning{erc-stg}{No Times New Roman-type font could be found}}}
+        \IfFontExistsTF{Times New Roman}{
+            \setmainfont[Ligatures=Rare]{Times New Roman}}{
+        }{\PackageWarning{pncdi-pd}{No Times New Roman-type font could be found}}}
 \fi
 
 % force serif fonts
