@@ -4,7 +4,7 @@
 [![Open in Overleaf](https://img.shields.io/static/v1?label=LaTeX&message=Open-in-Overleaf&color=47a141&style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/alexfikl/pncdi-pd/archive/refs/heads/main.zip)
 
 > [!WARNING]
-> These *unofficial* templates target the **PD 2026** call. As such, a proposal
+> These **unofficial** templates target the **PD 2026** call. As such, a proposal
 > with this template has not yet been submitted to the UEFISCDI and it may be
 > ineligible. However, we strive to keep it as close as possible to the provided
 > documents and will update the template as required going forward. Any
