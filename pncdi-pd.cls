@@ -122,6 +122,14 @@
 }%
 }
 
+\NewDocumentCommand \pncdicheckbox {} {%
+\mathord{\mbox{%
+    \setlength{\fboxrule}{.4pt}%
+    \setlength{\fboxsep}{0pt}%
+    \fbox{\rule{0pt}{1.6ex}\hspace{1.6ex}}%
+}}%
+}
+
 \if@draftproposal
     \newcount\timehh
     \timehh=\time \divide\timehh by 60
