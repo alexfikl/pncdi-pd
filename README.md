@@ -19,7 +19,7 @@ for the forms in the manual annexes. In particular, we have
 1. **Annex 3 A**: Identification Information (this is provided for book keeping and
    should not be submitted).
 2. **Annex 3 B**: Project Description (main document).
-3. **Annex 3.1**: CV.
+3. **Annex 3.1**: CV (need one for Project Director and for Mentor).
 4. **Annex 5.1-5.8**: Various forms and disclosures required for grant submission.
 
 > [!WARNING]
