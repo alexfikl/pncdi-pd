@@ -1,7 +1,14 @@
 \documentclass[draftproposal,pncdiform,masculine]{pncdi-pd}
 
-% NOTE: used in checkboxes
-\usepackage{amssymb}
+% Cross-engine checkbox: draws a hollow square with rules,
+% works identically under pdfLaTeX and LuaLaTeX.
+\ProvideDocumentCommand \square {} {%
+\mathord{\mbox{%
+    \setlength{\fboxrule}{.4pt}%
+    \setlength{\fboxsep}{0pt}%
+    \fbox{\rule{0pt}{1.6ex}\hspace{1.6ex}}%
+}}%
+}
 
 % \pncdiidentifier{PN-IV-RU-SC-PD-2026-1}
 % \pncdiauthor{}
