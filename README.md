@@ -130,6 +130,25 @@ explanation. It can be used to achieve 3 results based on the options:
 The empty dotted placeholders (as provided here), use the first form. The user can
 then fill them in using the second or third form, as desired.
 
+### Fonts
+
+The grant documentation requires the Times New Roman Font. This template uses
+the `mathptmx` fonts (on PDFLaTeX) or the TeX Gyre Termes fonts (on LuaLaTeX).
+These are both open source fonts distributed with TeXLive and they are metric
+compatible with the Times New Roman font (i.e. you likely won't be able to tell
+the difference unless you're a typographer).
+
+If you want to use the Times New Roman fonts from your system, this can only be
+done with `LuaLaTeX`. The font can be set using something like
+```tex
+\usepackage{unicode-math}
+\setmainfont[Ligatures=TeX, Numbers=Lining]{Times New Roman}
+\setmathfont{TeX Gyre Termes Math}
+```
+
+If you use math, the TeX Gyre Termes font is still required, since the standard
+Times New Roman does not have any math symbols.
+
 ## License
 
 [Creative Commons Zero v1.0 Universal](https://creativecommons.org/public-domain/cc0/) (CC0-1.0).
