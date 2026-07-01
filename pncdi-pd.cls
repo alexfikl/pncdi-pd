@@ -3,7 +3,7 @@
 
 % <<< preamble
 
-\def\fileversion{v2026.2}
+\def\fileversion{v2026.3}
 \def\filedate{2026/07/01}
 \def\clsname{pncdi-pd}
 
