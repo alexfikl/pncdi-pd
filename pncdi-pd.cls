@@ -170,10 +170,10 @@
 \else
     \usepackage{fontspec}
     \IfFontExistsTF{TeX Gyre Termes}{
+        \usepackage{unicode-math}
+
         \setmainfont{TeX Gyre Termes}
         \setmathfont{TeX Gyre Termes Math}
-
-        \usepackage{unicode-math}
     }{
         \PackageWarning{pncdi-pd}{TeX Gyre Termes not found, falling back to Latin Modern}
     }
