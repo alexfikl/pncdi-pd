@@ -169,11 +169,14 @@
     \usepackage{mathptmx}
 \else
     \usepackage{fontspec}
-    \IfFontExistsTF{Nimbus Roman}{
-            \setmainfont{Nimbus Roman}
-        \IfFontExistsTF{Times New Roman}{
-            \setmainfont[Ligatures=Rare]{Times New Roman}}{
-        }{\PackageWarning{pncdi-pd}{No Times New Roman-type font could be found}}}
+    \IfFontExistsTF{TeX Gyre Termes}{
+        \setmainfont{TeX Gyre Termes}
+        \setmathfont{TeX Gyre Termes Math}
+
+        \usepackage{unicode-math}
+    }{
+        \PackageWarning{pncdi-pd}{TeX Gyre Termes not found, falling back to Latin Modern}
+    }
 \fi
 
 % force serif fonts
