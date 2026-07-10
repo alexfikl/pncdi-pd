@@ -103,7 +103,7 @@
 \NewDocumentCommand \insertpncdiidentifier {} {\pncdi@identifier}
 
 \NewDocumentCommand \rodate {} {\two@digits{\the\day}.\two@digits{\the\month}.\the\year}
-\NewDocumentCommand \gendered { m m } {\if@masculine #1\else \if@feminine #2 \else \textbf{NOGENDER} \fi \fi}
+\NewDocumentCommand \gendered { m m } {\if@masculine#1\else\if@feminine#2\else\textbf{NOGENDER}\fi\fi}
 
 \NewDocumentCommand \placeholder {s O{8} m} {%
 \IfBlankTF{#3}{
