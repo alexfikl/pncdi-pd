@@ -104,6 +104,8 @@ and should not be changed. The template also defines the following commands.
 | :-                                | :-                                    |
 | `\pncdiauthor{<>}`                | Project director full name            |
 | `\insertpncdiauthor`              | Retrieves the author name             |
+| `\pncdimentor{<>}`                | Mentor full name                      |
+| `\insertpncdimentor`              | Retrieves the mentor name             |
 | `\pncdititle{<>}`                 | Project full title                    |
 | `\insertpncdititle`               | Retrieves the project title           |
 | `\pncdiacronym{<>}`               | Project acronym                       |

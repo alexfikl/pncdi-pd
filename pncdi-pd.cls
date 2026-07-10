@@ -91,12 +91,14 @@
 % <<< commands
 
 \NewDocumentCommand \pncdiauthor { m } {\def\pncdi@author{#1}}
+\NewDocumentCommand \pncdimentor { m } {\def\pncdi@mentor{#1}}
 \NewDocumentCommand \pncdititle { m } {\def\pncdi@title{#1}}
 \NewDocumentCommand \pncdiacronym { m } {\def\pncdi@acronym{#1}}
 \NewDocumentCommand \pncdiinstitution { m } {\def\pncdi@institution{#1}}
 \NewDocumentCommand \pncdiidentifier { m } {\def\pncdi@identifier{#1}}
 
 \NewDocumentCommand \insertpncdiauthor {} {\pncdi@author}
+\NewDocumentCommand \insertpncdimentor {} {\pncdi@mentor}
 \NewDocumentCommand \insertpncdititle {} {\pncdi@title}
 \NewDocumentCommand \insertpncdiacronym {} {\pncdi@acronym}
 \NewDocumentCommand \insertpncdiinstitution {} {\pncdi@institution}
