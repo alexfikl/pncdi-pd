@@ -117,6 +117,8 @@ and should not be changed. The template also defines the following commands.
 | `\rodate`                         | A more locale specific formatted date |
 | `\gendered{<m>}{<f>}`             | Choose one of the two word inflections |
 | `\placeholder*[<w>]{<>}`          | Adds a little dotted placeholder for forms |
+| `\pncdicheckbox`                  | Checkbox for itemize                  |
+| `\pncdicheckboxselect`            | Selected checkbox for itemize         |
 | `\comment{<>}`                    | Adds italic text based on `draftproposal` |
 
 The `\pncdiidentifier` command should generally not be set by the user. Instead

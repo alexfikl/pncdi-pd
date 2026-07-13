@@ -131,6 +131,13 @@
     \fbox{\rule{0pt}{1.6ex}\hspace{1.6ex}}%
 }}%
 }
+\NewDocumentCommand \pncdicheckboxselect {} {%
+\mathord{\mbox{%
+    \setlength{\fboxrule}{.4pt}%
+    \setlength{\fboxsep}{0pt}%
+    \fbox{\rule{0pt}{1.6ex}\makebox[1.6ex]{\Large\textbf{\texttimes}}}%
+}}%
+}
 
 \if@draftproposal
     \newcount\timehh
@@ -149,7 +156,7 @@
 \fi
 
 \if@draftproposal
-    \NewDocumentCommand \comment { m } {\textit{#1}}
+    \NewDocumentCommand \comment { m } { \textit{#1}}
 
     \newenvironment{pncdiexplanation}{
         \begingroup
