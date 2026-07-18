@@ -1,9 +1,14 @@
 \documentclass[draftproposal,pncdib]{pncdi-pd}
 
+\usepackage{siunitx}
+
 % \pncdiidentifier{PN-IV-RU-SC-PD-2026-1}
 % \pncdiauthor{}
 % \pncdititle{}
 % \pncdiinstitution{}
+
+% number formatting (Romanian uses comma separator for thousands)
+\sisetup{group-separator={,}, group-minimum-digits=4}
 
 \begin{document}
 
@@ -205,7 +210,29 @@ existing research infrastructure and project objectives/activities;
 \begin{pncdiexplanation}
 Pre-calculation estimate (in RON, per calendar year):
 \end{pncdiexplanation}
-\vspace{-0.75em}
+
+% NOTE: this is from 17/07/2026 BCR
+% https://www.cursbnr.ro/arhiva-curs-bnr-2026-07-17
+\edef\EuroRON{5.2429}
+
+% NOTE: Plug in your costs in here and they will automatically fill out the table
+\edef\FirstYearPersonnel{1}
+\edef\FirstYearLogistics{1}
+\edef\FirstYearEquipment{1}
+\edef\FirstYearTravel{1}
+\edef\FirstYearIndirect{1}
+
+\edef\SecondYearPersonnel{2}
+\edef\SecondYearLogistics{2}
+\edef\SecondYearEquipment{2}
+\edef\SecondYearTravel{2}
+\edef\SecondYearIndirect{2}
+
+\edef\TotalPersonnel{\fpeval{\FirstYearPersonnel+\SecondYearPersonnel}}
+\edef\TotalLogistics{\fpeval{\FirstYearLogistics+\SecondYearLogistics}}
+\edef\TotalEquipment{\fpeval{\FirstYearEquipment+\SecondYearEquipment}}
+\edef\TotalTravel{\fpeval{\FirstYearTravel+\SecondYearTravel}}
+\edef\TotalIndirect{\fpeval{\FirstYearIndirect+\SecondYearIndirect}}
 
 \begin{tabular}{
     |m{0.508\textwidth}
@@ -226,41 +253,49 @@ Pre-calculation estimate (in RON, per calendar year):
 \\\hline
 
 \textbf{Personnel Expenses} &
-&
-&
+\num{\FirstYearPersonnel} &
+\num{\SecondYearPersonnel} &
+\num{\TotalPersonnel}
 \\\hline
 
 \textbf{Logistics expenses} &
-&
-&
+\num{\FirstYearLogistics} &
+\num{\SecondYearLogistics} &
+\num{\TotalLogistics}
 \\\hline
 
-Out of which the value for the equipment expenses & & & \\\hline
+Out of which the value for the equipment expenses &
+\num{\FirstYearEquipment} &
+\num{\SecondYearEquipment} &
+\num{\TotalEquipment}
+\\\hline
 
 \textbf{Travel expenses} &
-&
-&
+\num{\FirstYearTravel} &
+\num{\SecondYearTravel} &
+\num{\TotalTravel}
 \\\hline
 
 \textbf{Indirect expenses} &
-&
-&
+\num{\FirstYearIndirect} &
+\num{\SecondYearIndirect} &
+\num{\TotalIndirect}
 \\\hline
 
 \textbf{Total} &
+\num{\fpeval{\FirstYearPersonnel+\FirstYearLogistics+\FirstYearTravel+\FirstYearIndirect}}
 &
+\num{\fpeval{\SecondYearPersonnel+\SecondYearLogistics+\SecondYearTravel+\SecondYearIndirect}}
 &
+\num{\fpeval{\TotalPersonnel+\TotalLogistics+\TotalTravel+\TotalIndirect}}
 \\\hline
 \end{tabular}
-}
+
 \medskip
-{
-\setlength{\arrayrulewidth}{1pt}
 
 \begin{pncdiexplanation}
 Pre-calculation estimate (in Euro, at the project level):
 \end{pncdiexplanation}
-\vspace{-0.75em}
 
 \begin{tabular}{
     |m{0.508\textwidth}
@@ -272,21 +307,23 @@ Pre-calculation estimate (in Euro, at the project level):
 \textbf{(Euro)}}
 \\\hline
 
-\textbf{Personnel Expenses} &
+\textbf{Personnel Expenses} & \num{\fpeval{round(\TotalPersonnel / \EuroRON, 2)}}
 \\\hline
 
-\textbf{Logistics expenses} &
+\textbf{Logistics expenses} & \num{\fpeval{round(\TotalLogistics / \EuroRON, 2)}}
 \\\hline
 
-Out of which the value for the equipment expenses & \\\hline
-
-\textbf{Travel expenses} &
+Out of which the value for the equipment expenses & \num{\fpeval{round(\TotalEquipment / \EuroRON, 2)}}
 \\\hline
 
-\textbf{Indirect expenses} &
+\textbf{Travel expenses} & \num{\fpeval{round(\TotalTravel / \EuroRON, 2)}}
+\\\hline
+
+\textbf{Indirect expenses} & \num{\fpeval{round(\TotalIndirect / \EuroRON, 2)}}
 \\\hline
 
 \textbf{Total} &
+\num{\fpeval{round((\TotalPersonnel+\TotalLogistics+\TotalTravel+\TotalIndirect) / \EuroRON, 2)}}
 \\\hline
 \end{tabular}
 }
