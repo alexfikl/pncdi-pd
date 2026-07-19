@@ -199,6 +199,7 @@
 
 % force serif fonts
 \addtokomafont{disposition}{\rmfamily}
+\setkomafont{descriptionlabel}{\normalfont\bfseries}
 
 % enable this to better check sizing
 \if@showframe
