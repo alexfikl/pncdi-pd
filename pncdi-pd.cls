@@ -179,8 +179,17 @@
 \definecolor{PNCDITableLightGray}{RGB}{242, 242, 242}
 \definecolor{PNCDITableYellow}{RGB}{255, 255, 204}
 
+% force spacing
 \singlespacing
 \setstretch{1.15}
+
+% reduce list spacing a bit too
+\setlist{
+    itemsep=0.25\baselineskip,
+    parsep=0pt,
+    topsep=0.5\baselineskip,
+    partopsep=0pt
+}
 
 \ifpdftex
     \usepackage[T1]{fontenc}
