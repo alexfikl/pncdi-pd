@@ -42,7 +42,7 @@
 
 % additional options passed to `scrartcl` class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
-\PassOptionsToClass{a4paper, fontsize=11bp, footnotes=multiple}{scrartcl}
+\PassOptionsToClass{a4paper, fontsize=11bp, parskip=false, footnotes=multiple}{scrartcl}
 
 \ProcessOptions
 \LoadClass{scrartcl}
