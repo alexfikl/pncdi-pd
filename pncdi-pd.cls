@@ -290,9 +290,9 @@
 % <<< section styles
 
 % tighted sections a bit for more space
-\RedeclareSectionCommand[beforeskip=0.0em, afterskip=0.01em, font=\normalsize\bfseries]{section}
-\RedeclareSectionCommand[beforeskip=0.0em, afterskip=0.01em, font=\normalsize\bfseries]{subsection}
-\RedeclareSectionCommand[beforeskip=0.0em, afterskip=0.01em, font=\normalsize\bfseries]{subsubsection}
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{section}
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{subsection}
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{subsubsection}
 
 \if@pncdia
     \renewcommand{\thesection}{A.\arabic{section}.}
