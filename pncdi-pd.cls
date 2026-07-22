@@ -200,6 +200,8 @@
     partopsep=0pt
 }
 
+\setlength{\parindent}{1.27cm}
+
 \ifpdftex
     \usepackage[T1]{fontenc}
     \usepackage{mathptmx}
