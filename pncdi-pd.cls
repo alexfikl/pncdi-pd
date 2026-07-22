@@ -61,10 +61,12 @@
 % geometry
 \RequirePackage[
     top=2cm,
-    bottom=2cm,
+    % NOTE: the official docx file also has this bigger for some reason. It is what it is.
+    bottom=3.25cm,
     left=2cm,
     right=2cm,
-    footskip=1.15cm,
+    headsep=0.75cm,
+    footskip=1cm,
 ]{geometry}
 
 % customize headers and footers
