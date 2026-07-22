@@ -61,13 +61,20 @@
 % geometry
 \RequirePackage[
     top=2cm,
-    % NOTE: the official docx file also has this bigger for some reason. It is what it is.
-    bottom=3.25cm,
+    bottom=2cm,
     left=2cm,
     right=2cm,
-    headsep=0.75cm,
-    footskip=1cm,
+    footskip=1.15cm,
 ]{geometry}
+
+\if@pncdib
+    \geometry{
+        % NOTE: the official docx file also has this bigger for some reason. It is what it is.
+        bottom=3.85cm,
+        headsep=0.75cm,
+        footskip=1.65cm,
+    }
+\fi
 
 % customize headers and footers
 \RequirePackage{scrlayer-scrpage}
@@ -189,7 +196,7 @@
 \setlist{
     itemsep=0.25\baselineskip,
     parsep=0pt,
-    topsep=0.5\baselineskip,
+    topsep=0.25\baselineskip,
     partopsep=0pt
 }
 
@@ -289,7 +296,7 @@
 
 \if@pncdic
     \cfoot{\normalfont \pncdi@identifier}
-    \pagenumbering{gobble}
+    \ofoot{\pagemark}
 \fi
 
 % >>>
@@ -297,9 +304,15 @@
 % <<< section styles
 
 % tighted sections a bit for more space
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{section}
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{subsection}
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{subsubsection}
+\if@pncdib
+    \RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{section}
+    \RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{subsection}
+    \RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries]{subsubsection}
+\else
+    \RedeclareSectionCommand[beforeskip=0.01em, afterskip=0.01em, font=\normalsize\bfseries]{section}
+    \RedeclareSectionCommand[beforeskip=0.01em, afterskip=0.01em, font=\normalsize\bfseries]{subsection}
+    \RedeclareSectionCommand[beforeskip=0.01em, afterskip=0.01em, font=\normalsize\bfseries]{subsubsection}
+\fi
 
 \if@pncdia
     \renewcommand{\thesection}{A.\arabic{section}.}
