@@ -6,7 +6,7 @@
 > [!WARNING]
 > This is an **unofficial** LaTeX template for the **PD 2026** call. According
 > to the grant officer, the only allowed way to submit the proposal is by
-> converting the proposed Word document to PDF (as instructed in the manual).
+> converting the provided Word template to PDF (as instructed in the manual).
 > While this template is pretty faithful to the original Word document and
 > follows the same lines, it could easily be declared ineligible.
 > **Use it at your own peril! This template comes with ABSOLUTELY NO WARRANTY.**
