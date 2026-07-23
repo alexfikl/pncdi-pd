@@ -199,7 +199,10 @@
     topsep=0.25\baselineskip,
     partopsep=0pt
 }
-\setlength{\parindent}{1.27cm}
+
+\if@pncdib
+    \setlength{\parindent}{1.27cm}
+\fi
 
 \ifpdftex
     \usepackage[T1]{fontenc}
