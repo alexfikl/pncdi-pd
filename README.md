@@ -18,9 +18,9 @@ for the forms in the manual annexes. In particular, we have
 
 1. **Annex 3 A**: Identification Information (this is provided for book keeping and
    should not be submitted).
-2. **Annex 3 B**: Project Description (main document).
-3. **Annex 3.1**: CV (need one for the Project Director and one for the Mentor).
-4. **Annex 5.1-5.8**: Various forms and disclosures required for grant submission.
+1. **Annex 3 B**: Project Description (main document).
+1. **Annex 3.1**: CV (need one for the Project Director and one for the Mentor).
+1. **Annex 5.1-5.8**: Various forms and disclosures required for grant submission.
    These will likely be handled by your institution, but are provided here for
    completion (or if you prefer nicer looking ones).
 
@@ -34,9 +34,9 @@ The templates follow the guidelines given in the official grant manual as closel
 as possible. To use them, we recommend to:
 
 1. Copy all the LaTeX files and the `pncdi-pd.cls` file to some desired location.
-2. Remove all the `-template` suffixes (potentially add name or project acronym instead).
-3. Start filling in the documents with a close eye on the official requirements!
-4. Once the documents are filled in, remember to remove the `draftproposal` option.
+1. Remove all the `-template` suffixes (potentially add name or project acronym instead).
+1. Start filling in the documents with a close eye on the official requirements!
+1. Once the documents are filled in, remember to remove the `draftproposal` option.
 
 ### Forms
 
@@ -46,17 +46,19 @@ In particular:
 1. In the `documentclass`, change `masculine` to your preferred gender. Once the
    form is filled out, also remove the `draftproposal` option (this will remove
    all the italic comments in the forms).
-2. Fill in the `\placeholder` commands with your information.
-3. Adding signatures probably requires printing or using some fancier electronic
+1. Fill in the `\placeholder` commands with your information.
+1. Adding signatures probably requires printing or using some fancier electronic
    signature. Consult the official manual and instructions for this part.
 
 The gender should be chosen appropriately for each document and form (the forms
 are meant for the project director, mentor, and institution representative and
 could have different genders!). This is mostly meant to avoid writings like
 `Subsemnatul/Subsemnata` and instead uses a command
+
 ```tex
 \gendered{Subsemnatul}{Subsemnata}
 ```
+
 that dynamically changes based on the class option.
 
 ### Project Description
@@ -85,41 +87,41 @@ The `pncdi-pd` class contains all the requirements for the project templates. It
 has some minimal options to control its behavior. The main document class options
 are given below.
 
-| Option                            | Description                           |
-| :-                                | :-                                    |
-| `draftproposal`                   | Adds helpful comments and other drafting helpers |
-| `masculine`                       | Sets the gender in the grant forms to masculine |
-| `feminine`                        | Sets the gender in the grant forms to feminine |
-| `pncdiform`                       | Flag that marks the current document as a form |
-| `pncdia`                          | Flag that marks the template for Annex 3 A |
-| `pncdib`                          | Flag that marks the template for Annex 3 B |
-| `pncdic`                          | Flag that marks the template for Annex 3.1 |
-| `showframe`                       | Shows a frame for page margins (debug) |
-| `layoutgrid`                      | Shows a grid on the page to check margins (debug) |
+| Option          | Description                                       |
+| :-------------- | :------------------------------------------------ |
+| `draftproposal` | Adds helpful comments and other drafting helpers  |
+| `masculine`     | Sets the gender in the grant forms to masculine   |
+| `feminine`      | Sets the gender in the grant forms to feminine    |
+| `pncdiform`     | Flag that marks the current document as a form    |
+| `pncdia`        | Flag that marks the template for Annex 3 A        |
+| `pncdib`        | Flag that marks the template for Annex 3 B        |
+| `pncdic`        | Flag that marks the template for Annex 3.1        |
+| `showframe`     | Shows a frame for page margins (debug)            |
+| `layoutgrid`    | Shows a grid on the page to check margins (debug) |
 
 All the templates in this project are already correctly marked with e.g. `pncdiform`
 and should not be changed. The template also defines the following commands.
 
-| Command                           | Description                           |
-| :-                                | :-                                    |
-| `\pncdiauthor{<>}`                | Project director full name            |
-| `\insertpncdiauthor`              | Retrieves the author name             |
-| `\pncdimentor{<>}`                | Mentor full name                      |
-| `\insertpncdimentor`              | Retrieves the mentor name             |
-| `\pncdititle{<>}`                 | Project full title                    |
-| `\insertpncdititle`               | Retrieves the project title           |
-| `\pncdiacronym{<>}`               | Project acronym                       |
-| `\insertpncdiacronym`             | Retrieves the project acronym         |
-| `\pncdiinstitution{<>}`           | The hosting institution for the project |
-| `\insertpncdiinstitution`         | Retrieves the host institution        |
-| `\pncdiidentifier{<>}`            | Sets the grant call identifier        |
-| `\insertpncdiidentifier`          | Retrieves the grant call identifier   |
-| `\rodate`                         | A more locale specific formatted date |
-| `\gendered{<m>}{<f>}`             | Choose one of the two word inflections |
-| `\placeholder*[<w>]{<>}`          | Adds a little dotted placeholder for forms |
-| `\pncdicheckbox`                  | Checkbox for itemize                  |
-| `\pncdicheckboxselect`            | Selected checkbox for itemize         |
-| `\comment{<>}`                    | Adds italic text based on `draftproposal` |
+| Command                   | Description                                |
+| :------------------------ | :----------------------------------------- |
+| `\pncdiauthor{<>}`        | Project director full name                 |
+| `\insertpncdiauthor`      | Retrieves the author name                  |
+| `\pncdimentor{<>}`        | Mentor full name                           |
+| `\insertpncdimentor`      | Retrieves the mentor name                  |
+| `\pncdititle{<>}`         | Project full title                         |
+| `\insertpncdititle`       | Retrieves the project title                |
+| `\pncdiacronym{<>}`       | Project acronym                            |
+| `\insertpncdiacronym`     | Retrieves the project acronym              |
+| `\pncdiinstitution{<>}`   | The hosting institution for the project    |
+| `\insertpncdiinstitution` | Retrieves the host institution             |
+| `\pncdiidentifier{<>}`    | Sets the grant call identifier             |
+| `\insertpncdiidentifier`  | Retrieves the grant call identifier        |
+| `\rodate`                 | A more locale specific formatted date      |
+| `\gendered{<m>}{<f>}`     | Choose one of the two word inflections     |
+| `\placeholder*[<w>]{<>}`  | Adds a little dotted placeholder for forms |
+| `\pncdicheckbox`          | Checkbox for itemize                       |
+| `\pncdicheckboxselect`    | Selected checkbox for itemize              |
+| `\comment{<>}`            | Adds italic text based on `draftproposal`  |
 
 The `\pncdiidentifier` command should generally not be set by the user. Instead
 we suggest sending a PR to update the identifier in `pncdi-pd.cls`.
@@ -129,9 +131,9 @@ explanation. It can be used to achieve 3 results based on the options:
 
 1. `\placeholder[10]{}`: adds a set of 10 uniformly spaced dots to signal a part
    of a form that needs to be filled in.
-2. `\placeholder[10]{Content}`: ignores the `[10]` dots part (could even be removed)
+1. `\placeholder[10]{Content}`: ignores the `[10]` dots part (could even be removed)
    and just shows the contents.
-3. `\placeholder*{Content}`: similar to the above, but makes the text bold.
+1. `\placeholder*{Content}`: similar to the above, but makes the text bold.
 
 The empty dotted placeholders (as provided here), use the first form. The user can
 then fill them in using the second or third form, as desired.
@@ -146,6 +148,7 @@ the difference unless you're a typographer).
 
 If you want to use the Times New Roman fonts from your system, this can only be
 done with `LuaLaTeX`. The font can be set using something like
+
 ```tex
 \usepackage{unicode-math}
 \setmainfont[Ligatures=TeX, Numbers=Lining]{Times New Roman}

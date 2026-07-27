@@ -5,6 +5,7 @@ TEXFLAGS := "-pdflua -output-directory=" + TEXOUTDIR
 _default:
     @just template
 
+# {{{ pdf
 [private]
 pdf basename:
     {{ TEXMK }} {{ TEXFLAGS }} {{ basename }}.tex
@@ -24,10 +25,37 @@ template:
     @just pdf pncdi-pd-annex-57-template
     @just pdf pncdi-pd-annex-58-template
 
+# }}}
+# {{{ linting
+
+[doc("Format source files")]
+format: yamlfmt mdformat justfmt
+
+[doc("Format YAML files with yamlfmt")]
+yamlfmt:
+    yamlfmt -gitignore_excludes .
+    @echo -e "\e[1;32myamlfmt clean!\e[0m"
+
+[doc("Format markdown files with mdformat")]
+mdformat:
+    python -m mdformat .
+    @echo -e "\e[1;32mmdformat clean!\e[0m"
+
+[doc("Run just --fmt over the justfile")]
+justfmt:
+    just --unstable --fmt
+    @echo -e "\e[1;32mjust --fmt clean!\e[0m"
+
+[doc("Run all linting checks over the source code")]
+lint: typos
+
 [doc("Check for typos (using typos)")]
 typos:
     typos --sort --files --config typos.toml
     @echo -e "\e[1;32mtypos clean!\e[0m"
+
+# }}}
+# {{{ develop
 
 [doc("Update license text")]
 license:
@@ -42,3 +70,5 @@ clean:
 [doc("Remove all generated files")]
 purge: clean
     rm -rf *.pdf
+
+# }}}
