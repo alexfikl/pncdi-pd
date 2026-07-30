@@ -10,6 +10,7 @@ _default:
 pdf basename:
     {{ TEXMK }} {{ TEXFLAGS }} {{ basename }}.tex
     @cp {{ TEXOUTDIR }}/{{ basename }}.pdf .
+    exiftool -Subject= -Keywords= -overwrite_original {{ basename }}.pdf
 
 [doc("Compile templates")]
 template:
