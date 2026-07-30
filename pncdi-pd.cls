@@ -171,6 +171,7 @@
         \begingroup
         \setlist{leftmargin=*, nosep}
         \setlength{\parskip}{0pt}%
+        \setlength{\parindent}{0pt}%
         \itshape
     }{
         \endgroup
