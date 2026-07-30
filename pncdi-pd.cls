@@ -4,8 +4,8 @@
 % <<< preamble
 
 \def\pncdiversion{2026}
-\def\fileversion{v2026.4}
-\def\filedate{2026/07/18}
+\def\fileversion{v2026.5}
+\def\filedate{2026/07/30}
 \def\clsname{pncdi-pd}
 
 \NeedsTeXFormat{LaTeX2e}
