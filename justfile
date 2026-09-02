@@ -52,7 +52,7 @@ lint: typos
 
 [doc("Check for typos (using typos)")]
 typos:
-    typos --sort --files --config typos.toml
+    typos --sort --config typos.toml
     @echo -e "\e[1;32mtypos clean!\e[0m"
 
 # }}}
