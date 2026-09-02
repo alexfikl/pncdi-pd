@@ -48,12 +48,28 @@ justfmt:
     @echo -e "\e[1;32mjust --fmt clean!\e[0m"
 
 [doc("Run all linting checks over the source code")]
-lint: typos
+lint: typos badness
 
 [doc("Check for typos (using typos)")]
 typos:
     typos --sort --config typos.toml
     @echo -e "\e[1;32mtypos clean!\e[0m"
+
+[doc("Lint using badness")]
+badness:
+    badness lint \
+        pncdi-pd-annex-31-cv-template.tex \
+        pncdi-pd-annex-3-a-template.tex \
+        pncdi-pd-annex-3-b-template.tex \
+        pncdi-pd-annex-51-template.tex \
+        pncdi-pd-annex-52-template.tex \
+        pncdi-pd-annex-53-template.tex \
+        pncdi-pd-annex-54-template.tex \
+        pncdi-pd-annex-55-template.tex \
+        pncdi-pd-annex-56-template.tex \
+        pncdi-pd-annex-57-template.tex \
+        pncdi-pd-annex-58-template.tex
+    @echo -e "\e[1;32mbadness clean!\e[0m"
 
 # }}}
 # {{{ develop
