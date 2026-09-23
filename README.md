@@ -5,11 +5,13 @@
 
 > [!WARNING]
 > This is an **unofficial** LaTeX template for the **PD 2026** call. According
-> to the grant officer, the only allowed way to submit the proposal is by
+> to the grant officer, the only allowed method to submit the proposal is by
 > converting the provided Word template to PDF (as instructed in the manual).
-> While this template is pretty faithful to the original Word document and
-> follows the same lines, it could easily be declared ineligible.
-> **Use it at your own peril! This template comes with ABSOLUTELY NO WARRANTY.**
+> That being said, this template has been successfully used and deemed
+> eligibile by the UEFISCDI in 2026 (look for my name in
+> [here](https://uefiscdi.gov.ro/resource-836860-PCE2026_Lista-rezultate-preliminare-verificare-eligibilitate.pdf)).
+> **Use it at your own peril! This template comes with ABSOLUTELY NO
+> WARRANTY.**
 
 This repository contains templates for the
 [Postdoctoral Research Grants](https://uefiscdi.gov.ro/proiecte-de-cercetare-postdoctorala-pd)
