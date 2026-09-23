@@ -7,9 +7,10 @@
 > This is an **unofficial** LaTeX template for the **PD 2026** call. According
 > to the grant officer, the only allowed method to submit the proposal is by
 > converting the provided Word template to PDF (as instructed in the manual).
-> That being said, this template has been successfully used and deemed
-> eligibile by the UEFISCDI in 2026 (look for my name in
+> That being said, this template has been successfully used and deemed eligible
+> by the UEFISCDI in 2026 (look for my name in
 > [here](https://uefiscdi.gov.ro/resource-836860-PCE2026_Lista-rezultate-preliminare-verificare-eligibilitate.pdf)).
+>
 > **Use it at your own peril! This template comes with ABSOLUTELY NO
 > WARRANTY.**
 
